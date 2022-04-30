@@ -10,5 +10,8 @@ public class Estoque {
 		this.itens[index] = new Item(nome, desc, preco_compra, preco_venda, quantidade_comprada, quantidade_vendida);
 		index++;
 	}
+	public void acresentarItem(int index, double quantidade){
+		this.itens[index].quantidade_comprada += quantidade;
+	}
 	
 }
