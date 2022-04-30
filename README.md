@@ -9,7 +9,7 @@ quantidadecomprada, quantidadevendida)</li>
 existentes</li>
   <li>Não permitir quesejam cadastrados itens com preços inválidos, inclusive preço devenda menor que o preço de
 compra</li>
-  <li>Não permitir quea quantidade deitens disponíveis seja inválida</li>
+  <li>Não permitir quea quantidade de itens disponíveis seja inválida</li>
   <li>Dar baixa nos itens vendidos do estoque</li>
   <li>Mostrar um resumo dos itens esuas quantidades disponíveis ordenado pela descrição ou quantidade disponível,a
 critério do usuário</li>
