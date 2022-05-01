@@ -25,7 +25,7 @@ class Item {
 		}
 		
 		if (quantidade_vendida > quantidade_comprada) {
-			throw new ValorInvalidoException("Quantidade vendida maior que quantidade comprada.")
+			throw new ValorInvalidoException("Quantidade vendida maior que quantidade comprada.");
 		}
 		
 		this.nome = nome; 
@@ -36,21 +36,50 @@ class Item {
 		this.quantidade_vendida = quantidade_vendida;
 		this.quantidade = quantidade_comprada - quantidade_vendida;
 	}
+	
 	//Getters
-	public String getNome() {return this.nome;}
-	public String getDesc() {return this.desc;}
-	public double getPrecoCompra() {return this.preco_compra;}
-	public double getPrecoVenda() {return this.preco_compra;}
-	public int getQuantidadeComprada() {return this.quantidade_comprada;}
-	public int getQuantidadeVendida() {return this.quantidade_vendidavoid;}
-	public int getQuantidade() {return this.quantidade;}
+	public String getNome() {
+		return this.nome;
+	}
+	public String getDesc() {
+		return this.desc;
+	}
+	public double getPrecoCompra() {
+		return this.preco_compra;
+	}
+	public double getPrecoVenda() {
+		return this.preco_compra;
+	}
+	public int getQuantidadeComprada() {
+		return this.quantidade_comprada;
+	}
+	public int getQuantidadeVendida() {
+		return this.quantidade_vendida;
+	}
+	public int getQuantidade() {
+		return this.quantidade;
+	}
 
 	//Setters
-	public void setNome(String n) {this.nome = n;}
-	public void setDesc(String d) {this.desc = d;}
-	public void setPrecoCompra(double p) {this.preco_compra = p;}
-	public void setPrecoVenda(double p) {this.preco_compra = p;}
-	public void setQuantidadeComprada(int q) {this.quantidade_comprada = q;}
-	public void setQuantidadeVendida( int q) {this.quantidade_vendida = q;}
-	public void setQuantidade(int q) {this.quantidade = q;}
+	public void setNome(String n) {
+		this.nome = n;
+	}
+	public void setDesc(String d) {
+		this.desc = d;
+	}
+	public void setPrecoCompra(double p) {
+		this.preco_compra = p;
+	}
+	public void setPrecoVenda(double p) {
+		this.preco_compra = p;
+	}
+	public void setQuantidadeComprada(int q) {
+		this.quantidade_comprada = q;
+	}
+	public void setQuantidadeVendida( int q) {
+		this.quantidade_vendida = q;
+	}
+	public void setQuantidade(int q) {
+		this.quantidade = q;
+	}
 }

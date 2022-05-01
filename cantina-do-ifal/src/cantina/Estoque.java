@@ -18,8 +18,10 @@ public class Estoque {
 		}
 	}
 
-	public void acresentarItem(int index, double quantidade){
-		this.itens[index].quantidade_comprada += quantidade;
+	public void acresentarItem(int index, int quantidade){
+		this.itens[index].setQuantidadeComprada(this.itens[index].getQuantidadeComprada() + quantidade);
+		
+		
 	}
 	
 }
