@@ -1,6 +1,8 @@
 package cantina;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Estoque {
@@ -59,6 +61,21 @@ public class Estoque {
 	}
 	
 	public void resumoItens(int criterio) {
+
+		if (criterio == 1) {
+			Collections.sort(itens);
+			for (int i = 0; i < itens.size(); i++) {
+				Item item = itens.get(i);
+				System.out.println(item.getNome() + " " + item.getQuantidade());
+			}
+		} else if (criterio == 2) {
+			Collections.sort(itens);
+			for (int i = 0; i < itens.size(); i++) {
+				Item item = itens.get(i);
+				System.out.println(item.getNome() + " " + item.getQuantidade());
+			}
+		}
+
 
 	}
 	

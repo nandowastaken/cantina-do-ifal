@@ -1,6 +1,6 @@
 package cantina;
 
-public class Item {
+public class Item implements Comparable<Item>{
 	private String nome;
 	private String desc;
 	private double preco_compra;
@@ -94,5 +94,9 @@ public class Item {
 	
 	public String toString() {
 		return this.nome;
+	}
+
+	public int compareTo(Item qtdItem){
+		return (this.quantidade - qtdItem.getQuantidade());
 	}
 }
