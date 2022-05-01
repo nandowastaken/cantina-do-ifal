@@ -10,18 +10,23 @@ public class Estoque {
 		this.itens[index] = new Item(nome, desc, preco_compra, preco_venda, quantidade_comprada, quantidade_vendida);
 		index++;
 	}
-
-	public void venderItem(int index, int q_vendida) {
-		if (this.itens[index].getQuantidade() >= q_vendida) {
-			this.itens[index].setQuantidade(this.itens[index].getQuantidade() - q_vendida);
-			this.itens[index].setQuantidadeVendida(this.itens[index].getQuantidadeVendida() + q_vendida);		
+	
+	public void venderItem(int index, int q_vendida) throws ValorInvalidoException {
+		if (this.itens[index].getQuantidade() < q_vendida) {
+			throw new ValorInvalidoException("Venda maior do que quantidade disnponível no estoque.");
 		}
+		
+		this.itens[index].setQuantidade(this.itens[index].getQuantidade() - q_vendida);
+		this.itens[index].setQuantidadeVendida(this.itens[index].getQuantidadeVendida() + q_vendida);		
+		
 	}
+
 
 	public void acresentarItem(int index, int quantidade){
 		this.itens[index].setQuantidadeComprada(this.itens[index].getQuantidadeComprada() + quantidade);
 		
-		
 	}
+	
+	
 	
 }
