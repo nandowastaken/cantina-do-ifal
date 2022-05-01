@@ -8,6 +8,7 @@ public class Item implements Comparable<Item>{
 	private int quantidade_comprada;
 	private int quantidade_vendida;
 	private int quantidade;
+	private int criterio;
 	
 	Item(String nome, String desc, double preco_compra, double preco_venda, 
 			int quantidade_comprada) throws ValorInvalidoException 
@@ -58,6 +59,9 @@ public class Item implements Comparable<Item>{
 	public int getQuantidade() {
 		return this.quantidade;
 	}
+	public int getCriterio() {
+		return this.criterio;
+	}
 
 	//Setters
 	public void setNome(String n) {
@@ -81,6 +85,9 @@ public class Item implements Comparable<Item>{
 	public void setQuantidade(int q) {
 		this.quantidade = q;
 	}
+	public void setCriterio(int q) {
+		this.criterio = q;
+	}
 	
 	public void acrescentarItem(int quantidade) {
 		this.quantidade += quantidade;
@@ -97,6 +104,10 @@ public class Item implements Comparable<Item>{
 	}
 
 	public int compareTo(Item qtdItem){
-		return (this.quantidade - qtdItem.getQuantidade());
+		if (getCriterio() == 1){
+			return (this.quantidade - qtdItem.getQuantidade());
+		}else if (getCriterio() == 2) {
+			return null;
+		}
 	}
 }
