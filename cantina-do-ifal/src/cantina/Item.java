@@ -47,7 +47,7 @@ public class Item implements Comparable<Item>{
 		return this.preco_compra;
 	}
 	public double getPrecoVenda() {
-		return this.preco_compra;
+		return this.preco_venda;
 	}
 	public int getQuantidadeComprada() {
 		return this.quantidade_comprada;

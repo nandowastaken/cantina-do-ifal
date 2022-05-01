@@ -76,7 +76,7 @@ public class Estoque {
 			Collections.sort(itens);
 			for (int i = 0; i < itens.size(); i++) {
 				Item item = itens.get(i);
-				System.out.println(item.getNome() + " " + item.getQuantidade());
+				System.out.println(item.getNome() + " " + item.getDesc());
 			}
 		}
 
