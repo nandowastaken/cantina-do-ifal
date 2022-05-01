@@ -60,8 +60,12 @@ public class Estoque {
 		
 	}
 	
-	public void resumoItens(int criterio) {
-
+	public void resumoItens(int criterio) throws ListaVaziaException {
+		
+		if (this.itens.size() == 0) {
+			throw new ListaVaziaException("Não tem nenhum item no estoque.");
+		}
+		
 		if (criterio == 1) {
 			Collections.sort(itens);
 			for (int i = 0; i < itens.size(); i++) {
