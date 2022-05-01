@@ -10,7 +10,7 @@ public class Item {
 	private int quantidade;
 	
 	Item(String nome, String desc, double preco_compra, double preco_venda, 
-			int quantidade_comprada, int quantidade_vendida) throws ValorInvalidoException 
+			int quantidade_comprada) throws ValorInvalidoException 
 	{
 		if (preco_venda < preco_compra) {
 			throw new ValorInvalidoException("Preço de venda menor que o de compra.");
@@ -33,8 +33,7 @@ public class Item {
 		this.preco_compra = preco_compra;
 		this.preco_venda = preco_venda;
 		this.quantidade_comprada = quantidade_comprada;
-		this.quantidade_vendida = quantidade_vendida;
-		this.quantidade = quantidade_comprada - quantidade_vendida;
+		this.quantidade = quantidade_comprada;
 	}
 	
 	//Getters
@@ -81,6 +80,16 @@ public class Item {
 	}
 	public void setQuantidade(int q) {
 		this.quantidade = q;
+	}
+	
+	public void acrescentarItem(int quantidade) {
+		this.quantidade += quantidade;
+		this.quantidade_comprada += quantidade;
+	}
+	
+	public void venderItem(int quantidade) {
+		this.quantidade -= quantidade;
+		this.quantidade_vendida += quantidade;
 	}
 	
 	public String toString() {
