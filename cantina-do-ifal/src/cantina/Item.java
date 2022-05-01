@@ -107,7 +107,9 @@ public class Item implements Comparable<Item>{
 		if (getCriterio() == 1){
 			return (this.quantidade - qtdItem.getQuantidade());
 		}else if (getCriterio() == 2) {
-			return null;
+			return 0;
 		}
+		
+		return 0;
 	}
 }
