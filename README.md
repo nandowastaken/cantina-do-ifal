@@ -1,5 +1,7 @@
 # Cantina do Ifal
 
+Integrantes do grupo: Fernando Jorge, Normando Vinícius, Eliel Cirino e Vinícius Santos Germano. 
+
 ## Requisitos Funcionais
 
 <ul>
@@ -16,4 +18,8 @@ critério do usuário</li>
   <li>Mostrar resumo dos itens com quantidade baixa no estoque(abaixo de 50 itens)</li>
   <li>Mostrar resumo do lucro/prejuízo de acordo com a baixa dos produtos no estoque</li>
 </ul>
+
+## Desenvolvimento do Projeto
+
+Todos os requisitos foram cumpridos ao longo do projeto, o único método que apresenta falhas é o resumoItens() na classe Estoque, onde ele hora ou outra acaba retornando um resultado errado. 
 
