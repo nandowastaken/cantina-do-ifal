@@ -1,6 +1,6 @@
 package cantina;
 
-class Item {
+public class Item {
 	private String nome;
 	private String desc;
 	private double preco_compra;
@@ -71,7 +71,7 @@ class Item {
 		this.preco_compra = p;
 	}
 	public void setPrecoVenda(double p) {
-		this.preco_compra = p;
+		this.preco_venda = p;
 	}
 	public void setQuantidadeComprada(int q) {
 		this.quantidade_comprada = q;
@@ -81,5 +81,9 @@ class Item {
 	}
 	public void setQuantidade(int q) {
 		this.quantidade = q;
+	}
+	
+	public String toString() {
+		return this.nome;
 	}
 }
