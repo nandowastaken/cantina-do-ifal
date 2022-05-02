@@ -1,4 +1,8 @@
 package cantina;
+import cantina.Estoque;
+import cantina.Item;
+import cantina.ValorInvalidoException;
+import cantina.ListaVaziaException;
 
 import java.util.ArrayList;
 import java.util.Collection;

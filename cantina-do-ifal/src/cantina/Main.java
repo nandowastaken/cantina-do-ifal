@@ -2,6 +2,8 @@ package cantina;
 import java.util.Scanner;
 import cantina.Estoque;
 import cantina.Item;
+import cantina.ValorInvalidoException;
+import cantina.ListaVaziaException;
 
 
 public class Main {
