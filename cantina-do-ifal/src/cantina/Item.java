@@ -1,4 +1,6 @@
 package cantina;
+import cantina.ValorInvalidoException;
+import cantina.ListaVaziaException;
 
 public class Item implements Comparable<Item>{
 	private String nome;

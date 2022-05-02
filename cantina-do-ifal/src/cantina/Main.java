@@ -1,5 +1,7 @@
 package cantina;
 import java.util.Scanner;
+import cantina.Estoque;
+import cantina.Item;
 
 
 public class Main {
