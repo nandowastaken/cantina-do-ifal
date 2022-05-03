@@ -105,10 +105,28 @@ public class Item implements Comparable<Item>{
 		return this.nome;
 	}
 
-	public int compareTo(Item qtdItem){
-		if (getCriterio() == 1){
-			return (this.quantidade - qtdItem.getQuantidade());
-		}else if (getCriterio() == 2) {
+	public int compareTo(Item outroItem){
+		
+		// Organiza com base no critério;
+		if (this.getCriterio() == 1){
+			if (this.quantidade < outroItem.getQuantidade()) {
+				return -1;
+			}
+			
+			if (this.quantidade > outroItem.getQuantidade()) {
+				return 1;
+			}
+			
+			return 0;
+		}else if (this.getCriterio() == 2) {
+			if (this.desc.compareToIgnoreCase(outroItem.getDesc()) < 0) {
+				return -1;
+			}
+			
+			if (this.desc.compareToIgnoreCase(outroItem.getDesc()) > 0) {
+				return 1;
+			}
+			
 			return 0;
 		}
 		

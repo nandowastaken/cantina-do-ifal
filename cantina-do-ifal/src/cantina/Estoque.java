@@ -24,6 +24,7 @@ public class Estoque {
 			throw new ValorInvalidoException("Não tem nenhum item no estoque.");
 		}
 		
+		// Procura o item na lista para vender
 		for (int i = 0; i < this.itens.size(); i++) {
 			Item item = this.itens.get(i);
 			if (nome.equals(item.toString())) {
@@ -50,6 +51,7 @@ public class Estoque {
 			throw new ValorInvalidoException("Não tem nenhum item no estoque.");
 		}
 		
+		// Procura item na lista para acrescentar
 		for (int i = 0; i < this.itens.size(); i++) {
 			Item item = this.itens.get(i);
 			if (nome.equals(item.toString())) {
@@ -70,14 +72,20 @@ public class Estoque {
 			throw new ListaVaziaException("Não tem nenhum item no estoque.");
 		}
 		
+		// Define o critério da lista
+		for (int i = 0; i < this.itens.size(); i++) {
+			this.itens.get(i).setCriterio(criterio);
+		}
+		
+		Collections.sort(this.itens);
+		
+		// Faz o resumo com base no critério 
 		if (criterio == 1) {
-			Collections.sort(itens);
 			for (int i = 0; i < itens.size(); i++) {
 				Item item = itens.get(i);
 				System.out.println(item.getNome() + " " + item.getQuantidade());
 			}
 		} else if (criterio == 2) {
-			Collections.sort(itens);
 			for (int i = 0; i < itens.size(); i++) {
 				Item item = itens.get(i);
 				System.out.println(item.getNome() + " " + item.getDesc());
