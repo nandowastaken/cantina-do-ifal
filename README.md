@@ -21,5 +21,4 @@ critério do usuário</li>
 
 ## Desenvolvimento do Projeto
 
-Todos os requisitos foram cumpridos ao longo do projeto, o único método que apresenta falhas é o resumoItens() na classe Estoque, onde ele hora ou outra acaba retornando um resultado errado. 
-
+Ao longo do desenvolvimento, todos os requisitos foram cumpridos. A parte mais dificultosa do projeto foi dar um resumo de itens com base em um critério dado pelo usuário, este método estava com alguns bugs mas que ja foram corrigidos totalmente. 
