@@ -10,4 +10,12 @@ public class Login {
         login.setBounds(10,10,400,600);
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
+    public void principal(){
+        TelaPrincipal principal = new TelaPrincipal();
+        principal.setTitle("Pricipal");
+        principal.setVisible(true);
+        principal.setBounds(10,10,400,600);
+        principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }
