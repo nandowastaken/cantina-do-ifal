@@ -1,4 +1,4 @@
-package interfaces;
+package cantina;
 
 import javax.swing.JFrame;
 

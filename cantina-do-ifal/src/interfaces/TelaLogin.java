@@ -1,4 +1,4 @@
-package interfaces;
+package cantina;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,12 +48,10 @@ public class TelaLogin extends JFrame implements ActionListener{
             String senhaTexto;
             emailTexto = caixaEmail.getText();
             senhaTexto = caixaSenha.getText();
-            if (emailTexto != "" && senhaTexto != ""){
-                TelaPrincipal principal = new TelaPrincipal();
-                principal.setTitle("Pricipal");
-                principal.setVisible(true);
-                principal.setBounds(10,10,400,600);
-                principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            if (emailTexto.equalsIgnoreCase("normando@gmail.com") && senhaTexto.equalsIgnoreCase("12345")){
+                Login login = new Login();
+                login.principal();
+                dispose();
             }else{
                 JOptionPane.showMessageDialog(this, "Digite um valor valido");
             }
