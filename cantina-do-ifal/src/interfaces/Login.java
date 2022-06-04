@@ -3,7 +3,7 @@ package interfaces;
 import javax.swing.JFrame;
 
 public class Login {
-    public static void main(String[] args){
+    public static void loginWindow() {
         TelaLogin login = new TelaLogin();
         login.setTitle("Login");
         login.setVisible(true);
@@ -11,7 +11,7 @@ public class Login {
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public void principal(){
+    public static void principal(){
         TelaPrincipal principal = new TelaPrincipal();
         principal.setTitle("Pricipal");
         principal.setVisible(true);

@@ -8,6 +8,7 @@ import cantina.ListaVaziaException;
 import sql.ConnectionFactory;
 import sql.*;
 import java.sql.*;
+import interfaces.*;
 
 
 public class Main {
@@ -16,6 +17,8 @@ public class Main {
 		Connection con = ConnectionFactory.getConnection();
 		System.out.println("Conectado ao banco de dados!");
 		
+		// Login screen
+		Login.loginWindow();
 		
 		// Estoque
 		Estoque estoque = new Estoque();
