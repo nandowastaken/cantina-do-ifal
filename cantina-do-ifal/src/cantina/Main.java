@@ -1,13 +1,23 @@
 package cantina;
+import java.sql.Connection;
 import java.util.Scanner;
 import cantina.Estoque;
 import cantina.Item;
 import cantina.ValorInvalidoException;
 import cantina.ListaVaziaException;
+import sql.ConnectionFactory;
+import sql.*;
+import java.sql.*;
 
 
 public class Main {
 	public static void main(String[] args) {
+		// MySQL connection
+		Connection con = ConnectionFactory.getConnection();
+		System.out.println("Conectado ao banco de dados!");
+		
+		
+		// Estoque
 		Estoque estoque = new Estoque();
 		Scanner scanner_num = new Scanner(System.in);
 		Scanner scanner_text = new Scanner(System.in);

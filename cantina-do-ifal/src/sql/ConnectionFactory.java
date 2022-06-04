@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     private static Connection connection;
 
-    public static Connection getConnection() throws ClassNotFoundException {
+    public static Connection getConnection() throws RuntimeException {
         try {
             return connection = DriverManager.getConnection(Config.urlMySQL, Config.user, Config.pass);
         } catch (SQLException e) {
@@ -22,8 +22,10 @@ public class ConnectionFactory {
             throw new RuntimeException(e);
         }
     }
+    
+    /* 
     public static void main(String[] args) throws ClassNotFoundException {
         Connection con = getConnection();
         System.out.println("Conectado");
-    }
+    } */
 }
