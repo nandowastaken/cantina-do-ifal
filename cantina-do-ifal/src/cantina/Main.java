@@ -5,8 +5,7 @@ import cantina.Estoque;
 import cantina.Item;
 import cantina.ValorInvalidoException;
 import cantina.ListaVaziaException;
-import sql.ConnectionFactory;
-import sql.*;
+import database.*;
 import java.sql.*;
 import interfaces.*;
 

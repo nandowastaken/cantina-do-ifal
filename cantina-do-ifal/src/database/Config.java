@@ -1,4 +1,4 @@
-package sql;
+package database;
 
 public class Config {
     public static String database = "cantina";
