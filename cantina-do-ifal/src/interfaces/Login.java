@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.security.Principal;
+
 import javax.swing.JFrame;
 
 public class Login {
@@ -11,7 +13,7 @@ public class Login {
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public static void main(String[] args) {
+    public static void principal(){
         TelaFuncionario funcionario = new TelaFuncionario();
         funcionario.setTitle("Funcionario");
         funcionario.setVisible(true);
