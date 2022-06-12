@@ -23,9 +23,4 @@ public class ConnectionFactory {
         }
     }
     
-    /* 
-    public static void main(String[] args) throws ClassNotFoundException {
-        Connection con = getConnection();
-        System.out.println("Conectado");
-    } */
 }
