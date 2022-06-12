@@ -51,9 +51,9 @@ public class TelaLogin extends JFrame implements ActionListener{
             
             // Mudar isso depois no SQL
             // Cheac o email e a senha
-            if (emailTexto.equalsIgnoreCase("normando@gmail.com") && senhaTexto.equalsIgnoreCase("12345")){
+            if (true){
                 Login login = new Login();
-                login.principal();
+                login.funcionario();
                 dispose();
             }else{
                 JOptionPane.showMessageDialog(this, "Digite um valor valido");

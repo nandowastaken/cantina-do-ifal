@@ -11,11 +11,11 @@ public class Login {
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public static void principal(){
-        TelaPrincipal principal = new TelaPrincipal();
-        principal.setTitle("Pricipal");
-        principal.setVisible(true);
-        principal.setBounds(10,10,400,600);
-        principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public static void main(String[] args) {
+        TelaFuncionario funcionario = new TelaFuncionario();
+        funcionario.setTitle("Funcionario");
+        funcionario.setVisible(true);
+        funcionario.setBounds(10,10,400,600);
+        funcionario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
