@@ -4,6 +4,8 @@ import cantina.Item;
 import cantina.ValorInvalidoException;
 import cantina.ListaVaziaException;
 
+import database.Produto;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
