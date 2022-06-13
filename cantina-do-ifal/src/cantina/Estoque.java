@@ -14,7 +14,7 @@ import java.util.List;
 public class Estoque {
 	private List<Item> itens = new ArrayList<>();
 	
-	public void cadastrarItem(String nome, String desc, double preco_compra, 
+	public void cadastrarItem(String desc, double preco_compra, 
 			double preco_venda, int quantidade_comprada) throws ValorInvalidoException 
 	{	
 		
@@ -34,49 +34,29 @@ public class Estoque {
 		produto_dao.adicionaProduto(produto);
 	}
 	
-	public void venderItem(String nome, int q_vendida) throws ValorInvalidoException {
-		
-		if (this.itens.size() == 0) {
-			throw new ValorInvalidoException("Não tem nenhum item no estoque.");
+	public void venderItem(int id, int q_vendida) throws ValorInvalidoException {
+
+		if (q_vendida < 0) {
+			throw new ValorInvalidoException("Não tem como vender valores negativos.");
 		}
-		
 		// Procura o item na lista para vender
-		for (int i = 0; i < this.itens.size(); i++) {
-			Item item = this.itens.get(i);
-			if (nome.equals(item.toString())) {
-				if (item.getQuantidade() < q_vendida) {
-					throw new ValorInvalidoException("Venda maior do que quantidade disponível no estoque.");
-				}
-				
-				item.venderItem(q_vendida);
-			} else if (i == this.itens.size() - 1) {
-				throw new ValorInvalidoException("Item não existe no estoque.");
-			}
-		}
+		Update update = new Update();
+		update.venderItem(q_vendida, id);
 				
 		
 	}
 
 
-	public void acrescentarItem(String nome, int quantidade) throws ValorInvalidoException {
+	public void acrescentarItem(int id, int quantidade) throws ValorInvalidoException {
 		if (quantidade < 0) {
 			throw new ValorInvalidoException("Quantidade menor do que zero.");
 		}
 		
-		if (this.itens.size() == 0) {
-			throw new ValorInvalidoException("Não tem nenhum item no estoque.");
-		}
+		// Atualiza a quantidade
+		Update update = new Update();
+		update.adicionaQntProduto(quantidade, id);
+
 		
-		// Procura item na lista para acrescentar
-		for (int i = 0; i < this.itens.size(); i++) {
-			Item item = this.itens.get(i);
-			if (nome.equals(item.toString())) {
-				item.acrescentarItem(quantidade);
-			} else if (i == this.itens.size() - 1 ) {
-				throw new ValorInvalidoException("Item não existe no estoque.");
-			}
-		 
-		} 
 		
 		
 		
@@ -112,11 +92,6 @@ public class Estoque {
 	}
 	
 	public void lucroOuPrejuizo() throws ListaVaziaException {
-		
-		if (this.itens.size() == 0) {
-			throw new ListaVaziaException("Não tem nenhum item no estoque.");
-		}
-		
 		for (int i = 0; i < itens.size(); i++) {
 			Item item = itens.get(i);
 			double total_comprado = item.getPrecoCompra() * item.getQuantidadeComprada();

@@ -34,5 +34,15 @@ public class Selection {
 		}
 		
 	}
+	/*
+	public void lucroOuPrejuizo() {
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs;
+			rs = stmt.executeQuery("select email, senha from funcionario where email = '" + email + "' AND senha = '" + senha + "'");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	} */
 	
 }

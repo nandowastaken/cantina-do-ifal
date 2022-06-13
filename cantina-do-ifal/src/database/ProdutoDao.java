@@ -12,12 +12,11 @@ public class ProdutoDao {
 	}
 	
 	public void adicionaProduto(Produto produto) {
-		String sql = "insert into produto " + "(codigo_produto, descricao, preco_compra, preco_venda, "
-				+ "estoque_minimo, quantidade_comprada)" + (" values (?, ?, ?, ?, ?, ?)");
+		String sql = "insert into produto " + "(descricao, preco_compra, preco_venda, "
+				+ "estoque_minimo, quantidade_comprada)" + (" values (?, ?, ?, ?, ?)");
 		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setInt(0, produto.getCodigoProduto());
 			stmt.setString(1, produto.getDescricao());
 			stmt.setDouble(2, produto.getPrecoCompra());
 			stmt.setDouble(3, produto.getPrecoVenda());

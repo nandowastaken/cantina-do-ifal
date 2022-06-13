@@ -24,7 +24,7 @@ public class Main {
 		Estoque estoque = new Estoque();
 		Scanner scanner_num = new Scanner(System.in);
 		Scanner scanner_text = new Scanner(System.in);
-		boolean on = false;
+		boolean on = true;
 		
 		
 		
@@ -41,8 +41,6 @@ public class Main {
 			
 			switch (escolha) {
 				case 1:
-					System.out.println("Digite o nome do item: ");
-					String nome = scanner_text.nextLine();
 					System.out.println("Digite a descrição do item: ");
 					String desc = scanner_text.nextLine();
 					System.out.println("Digite o preço de compra do item: ");
@@ -53,7 +51,7 @@ public class Main {
 					int quantidade_comprada = scanner_num.nextInt();
 					
 					try {
-						estoque.cadastrarItem(nome,  desc,  preco_compra,  preco_venda,  quantidade_comprada);
+						estoque.cadastrarItem(desc,  preco_compra,  preco_venda,  quantidade_comprada);
 					} catch (ValorInvalidoException e) {
 						System.out.println(e.getMessage());
 					}
@@ -61,13 +59,13 @@ public class Main {
 					break;
 				
 				case 2:
-					System.out.println("Digite o nome do item: ");
-					String nome_acrescentar = scanner_text.nextLine();
+					System.out.println("Digite o id do item: ");
+					int id = scanner_text.nextInt();
 					System.out.println("Digite a quantidade: ");
 					int quantidade_acrescentar = scanner_num.nextInt();
 					
 					try {
-						estoque.acrescentarItem(nome_acrescentar, quantidade_acrescentar);
+						estoque.acrescentarItem(id, quantidade_acrescentar);
 						System.out.println("Item acrescentado com sucesso!");
 						
 					} catch (ValorInvalidoException e) {
@@ -77,12 +75,13 @@ public class Main {
 					break;
 				
 				case 3:
-					System.out.println("Digite o nome do item: ");
-					String nome_vender = scanner_text.nextLine();
+					System.out.println("Digite o id do item: ");
+					int id_venda = scanner_text.nextInt();
 					System.out.println("Digite a quantidade: ");
 					int quantidade_vender = scanner_num.nextInt();
 					try {
-						estoque.venderItem(nome_vender, quantidade_vender);
+						estoque.venderItem(id_venda, quantidade_vender);
+						System.out.println("Item vendido com sucesso!");
 					} catch (ValorInvalidoException e) {
 						System.out.println(e.getMessage());
 					}
