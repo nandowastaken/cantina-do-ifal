@@ -11,6 +11,7 @@ import java.util.List;
 
 
 public class TelaLogin extends JFrame implements ActionListener{
+	private boolean logged = false;
     Container tela = getContentPane();
     JLabel email = new JLabel("Email:");
     JLabel senha = new JLabel("Senha:");
@@ -58,23 +59,26 @@ public class TelaLogin extends JFrame implements ActionListener{
             List<String[]> dados = selectionFuncionario.SelectFuncionario();
             String email;
             String senha;
-            boolean logged = false;
             
             // Checa se o email e a senha são válidos
             for (int i=0; i < dados.size(); i++) {
             	String[] login_func = dados.get(i);
-            	if (login_func[0] == emailTexto && login_func[1] == senhaTexto) {
+            	
+            	if (login_func[0].equals(emailTexto) && login_func[1].equals(senhaTexto)) {
             		email = login_func[0];
             		senha = login_func[1];
-            		logged = true;
+            		
+            		this.logged = true;
+            		break;
             	}
             }
             
-            if (logged){
+            if (this.logged){
                 Login login = new Login();
                 login.funcionario();
+                this.logged = false;
                 dispose();
-                logged = false;
+                
                 
             }else{
                 JOptionPane.showMessageDialog(this, "Digite um valor valido");

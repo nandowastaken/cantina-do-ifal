@@ -1,5 +1,6 @@
 package cantina;
 import java.sql.Connection;
+import java.util.List;
 import java.util.Scanner;
 import cantina.Estoque;
 import cantina.Item;
@@ -16,6 +17,14 @@ public class Main {
 		Connection con = ConnectionFactory.getConnection();
 		System.out.println("Conectado ao banco de dados!");
 		
+		Selection s = new Selection();
+		List<String[]> dados = s.SelectFuncionario();
+		for (int i = 0; i < dados.size(); i ++) {
+			String[] dados_login = dados.get(i);
+			System.out.println(dados_login[0]);
+			System.out.println(dados_login[1]);
+		}
+		
 		// Login screen
 		Login.loginWindow();
 		
@@ -23,7 +32,7 @@ public class Main {
 		Estoque estoque = new Estoque();
 		Scanner scanner_num = new Scanner(System.in);
 		Scanner scanner_text = new Scanner(System.in);
-		boolean on = true;
+		boolean on = false;
 		
 		
 		

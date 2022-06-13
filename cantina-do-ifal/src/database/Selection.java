@@ -22,11 +22,12 @@ public class Selection {
 			ResultSet rs;
 			rs = stmt.executeQuery("select email, senha from funcionario");
 			while (rs.next()) {
-				String[] dados = new String[1];
+				String[] dados = new String[2];
 				email = rs.getString("email");
 				senha = rs.getString("senha");
 				dados[0] = email;
 				dados[1] = senha;
+				System.out.println(email + " " + senha);
 				dados_login.add(dados);
 			}
 			
