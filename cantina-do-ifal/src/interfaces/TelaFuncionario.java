@@ -140,6 +140,7 @@ public class TelaFuncionario extends JFrame implements ActionListener{
             criterio = criterioRes.getText();
 
             JOptionPane.showMessageDialog(this, "É essa peça que você queria?");
+            JOptionPane.showMessageDialog(this, "não");
         }else if(e.getSource() == itensQtdBaixa){
             JOptionPane.showMessageDialog(this, "É essa peça que você queria?");
         }else if(e.getSource() == lucrouPrejuizo){

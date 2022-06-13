@@ -11,17 +11,23 @@ public class Update {
     public void adicionaQntProduto(int quantidade, int id) {
         try {
             String sql = "update produto set quantidade_comprada = quantidade_comprada + ? where codigo_produto = ?";
+            String qnt_disponivel = "update produto set quantidade_disponivel = quantidade_disponivel + ? where codigo_produto = ?";
             PreparedStatement stmt = connection.prepareStatement(sql);
+            PreparedStatement stmt2 = connection.prepareStatement(qnt_disponivel);
             stmt.setInt(1, quantidade);
             stmt.setInt(2, id);
+
+            stmt2.setInt(1, quantidade);
+            stmt2.setInt(2, id);
+
             stmt.executeUpdate();
+            stmt2.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
             
 
     }
-
 
     public void venderItem(int quantidade, int id) {
         try {

@@ -87,33 +87,19 @@ public class Main {
 					}
 					
 					break;
-					
 				case 4:
 					System.out.println("Você deseja ter o resumo em qual ordem?");
 					System.out.println("1. Quantidade disponível.");
 					System.out.println("2. Descrição.");
 					int ordem = scanner_num.nextInt();
-					try {
-						estoque.resumoItens(ordem);
-					} catch (ListaVaziaException e) {
-						System.out.println(e.getMessage());
-					}
-					break;
+					estoque.resumoItens(ordem);
 					
+					break;	
 				case 5:
-					try {
-						estoque.itensQntdBaixa();
-					} catch (ListaVaziaException e) {
-						System.out.println(e.getMessage());
-					}
+					estoque.itensQntdBaixa();
 					break;
 				case 6:
-					try {
-						estoque.lucroOuPrejuizo();
-					} catch (ListaVaziaException e) {
-						System.out.println(e.getMessage());
-					}
-					
+					estoque.lucroOuPrejuizo();
 					break;
 				case 7:
 					on = false;

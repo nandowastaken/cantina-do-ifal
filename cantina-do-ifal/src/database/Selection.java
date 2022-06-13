@@ -54,9 +54,34 @@ public class Selection {
 			
 			return lucro;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new RuntimeException(e);	
 		}
 	} 
+
+	public List<int[]> itensQntdBaixa() {
+		List<int[]> itens_qntdBaixa = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs;
+			rs = stmt.executeQuery("select codigo_produto, quantidade_disponivel from produto");
+
+			while (rs.next()) {
+				int[] produtos = new int[2];
+				int cod_prod = rs.getInt("codigo_produto");
+				int qntd_disponivel = rs.getInt("quantidade_disponivel");
+				produtos[0] = cod_prod;
+				produtos[1] = qntd_disponivel;
+
+				if (qntd_disponivel < 50) {
+					itens_qntdBaixa.add(produtos);
+				}
+			}
+
+			return itens_qntdBaixa;
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+ 	}
 
 	public void resumoItens() {
 		

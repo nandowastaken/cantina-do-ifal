@@ -62,7 +62,7 @@ public class Estoque {
 		
 	}
 	
-	public void resumoItens(int criterio) throws ListaVaziaException {
+	public void resumoItens(int criterio) {
 		// Define o critério da lista
 		for (int i = 0; i < this.itens.size(); i++) {
 			this.itens.get(i).setCriterio(criterio);
@@ -86,7 +86,7 @@ public class Estoque {
 
 	}
 	
-	public void lucroOuPrejuizo() throws ListaVaziaException {
+	public void lucroOuPrejuizo() {
 		Selection determinarLucro = new Selection();
 		double lucro = determinarLucro.lucroOuPrejuizo();
 			
@@ -97,17 +97,16 @@ public class Estoque {
 		}
 	}
 	
-	public void itensQntdBaixa() throws ListaVaziaException {
-		
-		if (this.itens.size() == 0) {
-			throw new ListaVaziaException("Não tem nenhum item no estoque.");
-		}
-		
-		for (int i = 0; i < itens.size(); i++) {
-			Item item = itens.get(i);
-			if (item.getQuantidade() < 50) {
-				System.out.println(item.getNome() + " " + item.getQuantidade());
-			}
+	public void itensQntdBaixa() {
+		Selection selectItensBaixa = new Selection();
+		List<int[]> produtos = selectItensBaixa.itensQntdBaixa();
+		System.out.println("");
+
+		for (int i = 0; i < produtos.size(); i++) {
+			int[] produto = produtos.get(i);
+			int cod_prod = produto[0];
+			int qntd = produto[1];
+			System.out.println(cod_prod + ": " + qntd);
 			
 		}
 	}
