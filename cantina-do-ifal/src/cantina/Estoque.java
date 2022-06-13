@@ -22,6 +22,7 @@ public class Estoque {
 			throw new ValorInvalidoException("Valor inválido.");
 		}
 		
+		System.out.println("");
 		Produto produto = new Produto();
 		produto.setDescricao(desc);
 		produto.setEstoqueMin(20);
@@ -35,7 +36,7 @@ public class Estoque {
 	}
 	
 	public void venderItem(int id, int q_vendida) throws ValorInvalidoException {
-
+		System.out.println("");
 		if (q_vendida < 0) {
 			throw new ValorInvalidoException("Não tem como vender valores negativos.");
 		}
@@ -48,6 +49,7 @@ public class Estoque {
 
 
 	public void acrescentarItem(int id, int quantidade) throws ValorInvalidoException {
+		System.out.println("");
 		if (quantidade < 0) {
 			throw new ValorInvalidoException("Quantidade menor do que zero.");
 		}
@@ -55,32 +57,20 @@ public class Estoque {
 		// Atualiza a quantidade
 		Update update = new Update();
 		update.adicionaQntProduto(quantidade, id);
-
-		
-		
-		
 		
 	}
 	
 	public void resumoItens(int criterio) {
-		// Define o critério da lista
-		for (int i = 0; i < this.itens.size(); i++) {
-			this.itens.get(i).setCriterio(criterio);
-		}
-		
-		Collections.sort(this.itens);
-		
-		// Faz o resumo com base no critério 
-		if (criterio == 1) {
-			for (int i = 0; i < itens.size(); i++) {
-				Item item = itens.get(i);
-				System.out.println(item.getNome() + " " + item.getQuantidade());
-			}
-		} else if (criterio == 2) {
-			for (int i = 0; i < itens.size(); i++) {
-				Item item = itens.get(i);
-				System.out.println(item.getNome() + " " + item.getDesc());
-			}
+		Selection selectResumoItens = new Selection();
+		List<int[]> produtos = selectResumoItens.resumoItens(criterio);
+
+		System.out.println("");
+		for (int i = 0; i < produtos.size(); i++) {
+			int[] produto = produtos.get(i);
+			int cod_prod = produto[0];
+			int qntd = produto[1];
+			System.out.println(cod_prod + ": " + qntd);
+			
 		}
 
 
@@ -98,6 +88,7 @@ public class Estoque {
 	}
 	
 	public void itensQntdBaixa() {
+		System.out.println("");
 		Selection selectItensBaixa = new Selection();
 		List<int[]> produtos = selectItensBaixa.itensQntdBaixa();
 		System.out.println("");

@@ -83,8 +83,34 @@ public class Selection {
 		}
  	}
 
-	public void resumoItens() {
-		
+	public List<int[]> resumoItens(int criterio) {
+		List<int[]> produtos = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = null;
+
+			// quantidade
+			if (criterio == 1) {
+				rs = stmt.executeQuery("select codigo_produto, quantidade_disponivel from produto order by quantidade_disponivel");
+			} else if (criterio == 2) {
+				rs = stmt.executeQuery("select codigo_produto, quantidade_disponivel from produto order by descricao");
+			}
+
+			while (rs.next()) {
+				int[] produto = new int[2];
+				int cod_prod = rs.getInt("codigo_produto");
+				int qntd_disponivel = rs.getInt("quantidade_disponivel");
+				produto[0] = cod_prod;
+				produto[1] = qntd_disponivel;
+				produtos.add(produto);
+
+			}
+			
+			return produtos;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 }

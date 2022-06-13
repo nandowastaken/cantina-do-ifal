@@ -87,6 +87,7 @@ public class Main {
 					}
 					
 					break;
+					
 				case 4:
 					System.out.println("Você deseja ter o resumo em qual ordem?");
 					System.out.println("1. Quantidade disponível.");
@@ -94,7 +95,8 @@ public class Main {
 					int ordem = scanner_num.nextInt();
 					estoque.resumoItens(ordem);
 					
-					break;	
+					break;
+					
 				case 5:
 					estoque.itensQntdBaixa();
 					break;
