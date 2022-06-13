@@ -12,23 +12,20 @@ public class Selection {
 		connection = ConnectionFactory.getConnection();
 	}
 	
-	public List<String[]> SelectFuncionario() {
+	public String[] SelectFuncionario(String email, String senha) {
 		
-		List<String[]> dados_login = new ArrayList<>();
+		String[] dados_login = new String[2];
 		try {
-			String email;
-			String senha;
 			Statement stmt = connection.createStatement();
 			ResultSet rs;
-			rs = stmt.executeQuery("select email, senha from funcionario");
+			rs = stmt.executeQuery("select email, senha from funcionario where email = '" + email + "' AND senha = '" + senha + "'");
+			
+
 			while (rs.next()) {
-				String[] dados = new String[2];
 				email = rs.getString("email");
 				senha = rs.getString("senha");
-				dados[0] = email;
-				dados[1] = senha;
-				System.out.println(email + " " + senha);
-				dados_login.add(dados);
+				dados_login[0] = email;
+				dados_login[1] = senha;
 			}
 			
 			return dados_login;

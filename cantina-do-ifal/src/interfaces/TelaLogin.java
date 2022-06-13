@@ -56,24 +56,13 @@ public class TelaLogin extends JFrame implements ActionListener{
             
             // Login
             Selection selectionFuncionario = new Selection();
-            List<String[]> dados = selectionFuncionario.SelectFuncionario();
-            String email;
-            String senha;
+            String[] dados = selectionFuncionario.SelectFuncionario(emailTexto, senhaTexto);
+            String email = dados[0];
+            String senha = dados[1];
             
             // Checa se o email e a senha são válidos
-            for (int i=0; i < dados.size(); i++) {
-            	String[] login_func = dados.get(i);
-            	
-            	if (login_func[0].equals(emailTexto) && login_func[1].equals(senhaTexto)) {
-            		email = login_func[0];
-            		senha = login_func[1];
-            		
-            		this.logged = true;
-            		break;
-            	}
-            }
             
-            if (this.logged){
+            if (email != null){
                 Login login = new Login();
                 login.funcionario();
                 this.logged = false;

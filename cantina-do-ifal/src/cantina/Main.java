@@ -17,14 +17,6 @@ public class Main {
 		Connection con = ConnectionFactory.getConnection();
 		System.out.println("Conectado ao banco de dados!");
 		
-		Selection s = new Selection();
-		List<String[]> dados = s.SelectFuncionario();
-		for (int i = 0; i < dados.size(); i ++) {
-			String[] dados_login = dados.get(i);
-			System.out.println(dados_login[0]);
-			System.out.println(dados_login[1]);
-		}
-		
 		// Login screen
 		Login.loginWindow();
 		
