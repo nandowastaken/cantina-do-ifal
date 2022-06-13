@@ -20,7 +20,7 @@ critério do usuário</li>
 </ul>
 
 ## Como rodar?
-Vá em config.java do pacote database e ajuste os dados do banco de dados para si. Para ter o banco de dados do projeto, você pode baixar ele aqui e importar no phpmyadmin: https://github.com/nandowastaken/estoque <br>
+Vá em config.java do pacote database e ajuste os dados do banco de dados para si. Para ter o banco de dados do projeto, você pode baixar ele aqui e importar no phpmyadmin: https://github.com/nandowastaken/estoque e instalar a base de dados cantina_<br>
 Depois use o terminal para usar o programa. Da interface, somente o login funciona. 
 
 ## Desenvolvimento do projeto
