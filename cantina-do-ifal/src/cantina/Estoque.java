@@ -63,11 +63,6 @@ public class Estoque {
 	}
 	
 	public void resumoItens(int criterio) throws ListaVaziaException {
-		
-		if (this.itens.size() == 0) {
-			throw new ListaVaziaException("Não tem nenhum item no estoque.");
-		}
-		
 		// Define o critério da lista
 		for (int i = 0; i < this.itens.size(); i++) {
 			this.itens.get(i).setCriterio(criterio);
@@ -92,17 +87,13 @@ public class Estoque {
 	}
 	
 	public void lucroOuPrejuizo() throws ListaVaziaException {
-		for (int i = 0; i < itens.size(); i++) {
-			Item item = itens.get(i);
-			double total_comprado = item.getPrecoCompra() * item.getQuantidadeComprada();
-			double total_vendido = item.getPrecoVenda() * item.getQuantidadeVendida();
-			double lucro = total_vendido - total_comprado;
+		Selection determinarLucro = new Selection();
+		double lucro = determinarLucro.lucroOuPrejuizo();
 			
-			if (lucro > 0) {
-				System.out.println("O lucro foi de " + lucro);
-			} else {
-				System.out.println("O prejuízo foi de " + lucro);
-			}
+		if (lucro > 0) {
+			System.out.println("O lucro foi de " + lucro);
+		} else {
+			System.out.println("O prejuízo foi de " + lucro);
 		}
 	}
 	
