@@ -19,6 +19,9 @@ critério do usuário</li>
   <li>Mostrar resumo do lucro/prejuízo de acordo com a baixa dos produtos no estoque</li>
 </ul>
 
-## Desenvolvimento do Projeto
+## Como rodar?
+Vá em config.java do pacote database e ajuste os dados do banco de dados para si. Para ter o banco de dados do projeto, você pode baixar ele aqui e importar no phpmyadmin: https://github.com/nandowastaken/estoque
+Depois use o terminal para usar o programa. Da interface, somente o login funciona. 
 
-Ao longo do desenvolvimento, todos os requisitos foram cumpridos. A parte mais dificultosa do projeto foi dar um resumo de itens com base em um critério dado pelo usuário, este método estava com alguns bugs mas que ja foram corrigidos totalmente. 
+## Desenvolvimento do projeto
+Os requisitos funcionais (cadastrar, vender, resumos, acrescentar) foram cumpridos. A interface e a conexão também estão ok, entretanto a interface do funcionário não tem funcionalidade (é necessário usar o terminal). 
