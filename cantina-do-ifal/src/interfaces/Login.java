@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.security.Principal;
+
 import javax.swing.JFrame;
 
 public class Login {
@@ -12,10 +14,10 @@ public class Login {
     }
     
     public static void principal(){
-        TelaPrincipal principal = new TelaPrincipal();
-        principal.setTitle("Pricipal");
-        principal.setVisible(true);
-        principal.setBounds(10,10,400,600);
-        principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        TelaFuncionario funcionario = new TelaFuncionario();
+        funcionario.setTitle("Funcionario");
+        funcionario.setVisible(true);
+        funcionario.setBounds(10,10,400,600);
+        funcionario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
