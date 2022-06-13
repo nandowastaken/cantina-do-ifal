@@ -18,6 +18,10 @@ public class Estoque {
 			double preco_venda, int quantidade_comprada) throws ValorInvalidoException 
 	{	
 		
+		if (preco_compra <= 0 || preco_venda <= 0 || quantidade_comprada < 0) {
+			throw new ValorInvalidoException("Valor inválido.");
+		}
+		
 		Produto produto = new Produto();
 		produto.setDescricao(desc);
 		produto.setEstoqueMin(20);
