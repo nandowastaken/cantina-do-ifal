@@ -13,7 +13,7 @@ public class Login {
         login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public static void principal(){
+    public static void funcionario(){
         TelaFuncionario funcionario = new TelaFuncionario();
         funcionario.setTitle("Funcionario");
         funcionario.setVisible(true);

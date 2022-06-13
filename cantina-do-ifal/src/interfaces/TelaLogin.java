@@ -1,9 +1,13 @@
 package interfaces;
 
 import javax.swing.*;
+
+import database.Selection;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 
 public class TelaLogin extends JFrame implements ActionListener{
@@ -49,12 +53,29 @@ public class TelaLogin extends JFrame implements ActionListener{
             emailTexto = caixaEmail.getText();
             senhaTexto = caixaSenha.getText();
             
-            // Mudar isso depois no SQL
-            // Cheac o email e a senha
-            if (true){
+            // Login
+            Selection selectionFuncionario = new Selection();
+            List<String[]> dados = selectionFuncionario.SelectFuncionario();
+            String email;
+            String senha;
+            boolean logged = false;
+            
+            // Checa se o email e a senha são válidos
+            for (int i=0; i < dados.size(); i++) {
+            	String[] login_func = dados.get(i);
+            	if (login_func[0] == emailTexto && login_func[1] == senhaTexto) {
+            		email = login_func[0];
+            		senha = login_func[1];
+            		logged = true;
+            	}
+            }
+            
+            if (logged){
                 Login login = new Login();
                 login.funcionario();
                 dispose();
+                logged = false;
+                
             }else{
                 JOptionPane.showMessageDialog(this, "Digite um valor valido");
             }

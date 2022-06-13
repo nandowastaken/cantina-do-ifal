@@ -25,6 +25,8 @@ public class Main {
 		Scanner scanner_text = new Scanner(System.in);
 		boolean on = true;
 		
+		
+		
 		while (on) {
 			System.out.println("O que você deseja fazer?");
 			System.out.println("1. Cadastrar item.");

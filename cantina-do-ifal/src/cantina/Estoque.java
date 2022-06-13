@@ -4,7 +4,7 @@ import cantina.Item;
 import cantina.ValorInvalidoException;
 import cantina.ListaVaziaException;
 
-import database.Produto;
+import database.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,8 +16,18 @@ public class Estoque {
 	
 	public void cadastrarItem(String nome, String desc, double preco_compra, 
 			double preco_venda, int quantidade_comprada) throws ValorInvalidoException 
-	{
-		this.itens.add(new Item(nome, desc, preco_compra, preco_venda, quantidade_comprada));
+	{	
+		
+		Produto produto = new Produto();
+		produto.setDescricao(desc);
+		produto.setEstoqueMin(20);
+		produto.setPrecoCompra(preco_compra);
+		produto.setPrecoVenda(preco_venda);
+		produto.setQuantComprada(quantidade_comprada);
+		
+		// Adiciona produto ao banco de dados
+		ProdutoDao produto_dao = new ProdutoDao();
+		produto_dao.adicionaProduto(produto);
 	}
 	
 	public void venderItem(String nome, int q_vendida) throws ValorInvalidoException {

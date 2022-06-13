@@ -10,6 +10,7 @@ public class VendeDao {
 	
 	public void adicionaVende(Vende vende) {
 		String sql = "insert into vende " + "(email, codigo_venda)" + (" values (?, ?)");
+		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(0, vende.getEmail());
